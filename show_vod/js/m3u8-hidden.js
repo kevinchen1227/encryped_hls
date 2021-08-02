@@ -1,0 +1,81 @@
+if (Hls.isSupported()) {
+	var manifest = [
+		     	'#EXTM3U',
+				'#EXT-X-VERSION:3',
+				'#EXT-X-TARGETDURATION:16',
+				'#EXT-X-MEDIA-SEQUENCE:0',
+				'#EXT-X-PLAYLIST-TYPE:VOD',
+				'#EXT-X-KEY:METHOD=AES-128,URI="data:text/plain;charset=utf-8,6e1580088bbdf7c0410a8fa3eb3e9a59"',
+				'#EXTINF:14.625000,',
+				'http://localhost:8888/video/test0.ts',
+				'#EXTINF:15.166667,',
+				'http://localhost:8888/video/test1.ts',
+				'#EXTINF:6.708333,',
+				'http://localhost:8888/video/test2.ts',
+				'#EXTINF:13.125000,',
+				'http://localhost:8888/video/test3.ts',
+				'#EXTINF:11.250000,',
+				'http://localhost:8888/video/test4.ts',
+				'#EXTINF:14.625000,',
+				'http://localhost:8888/video/test5.ts',
+				'#EXTINF:14.458333,',
+				'http://localhost:8888/video/test6.ts',
+				'#EXTINF:7.958333,',
+				'http://localhost:8888/video/test7.ts',
+				'#EXTINF:10.208333,',
+				'http://localhost:8888/video/test8.ts',
+				'#EXTINF:12.875000,',
+				'http://localhost:8888/video/test9.ts',
+				'#EXTINF:12.166667,',
+				'http://localhost:8888/video/test10.ts',
+				'#EXTINF:12.083333,',
+				'http://localhost:8888/video/test11.ts',
+				'#EXTINF:11.375000,',
+				'http://localhost:8888/video/test12.ts',
+				'#EXTINF:6.625000,',
+				'http://localhost:8888/video/test13.ts',
+				'#EXT-X-ENDLIST'
+	];
+    var manifest_str = 
+    `#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-TARGETDURATION:16
+#EXT-X-MEDIA-SEQUENCE:0
+#EXT-X-PLAYLIST-TYPE:VOD
+#EXT-X-KEY:METHOD=AES-128,URI="data:text/plain;charset=utf-8,6e1580088bbdf7c0410a8fa3eb3e9a59"
+#EXTINF:14.625000,
+http://localhost:8888/video/test0.ts
+#EXTINF:15.166667,
+http://localhost:8888/video/video/test1.ts
+#EXTINF:6.708333,
+http://localhost:8888/video/video/test2.ts
+#EXTINF:13.125000,
+http://localhost:8888/video/video/test3.ts
+#EXTINF:11.250000,
+http://localhost:8888/video/video/test4.ts
+#EXTINF:14.625000,
+http://localhost:8888/video/video/test5.ts
+#EXTINF:14.458333,
+http://localhost:8888/video/video/test6.ts
+#EXTINF:7.958333,
+http://localhost:8888/video/video/test7.ts
+#EXTINF:10.208333,
+http://localhost:8888/video/video/test8.ts
+#EXTINF:12.875000,
+http://localhost:8888/video/video/test9.ts
+#EXTINF:12.166667,
+http://localhost:8888/video/video/test10.ts
+#EXTINF:12.083333,
+http://localhost:8888/video/video/test11.ts
+#EXTINF:11.375000,
+http://localhost:8888/video/video/test12.ts
+#EXTINF:6.625000,
+http://localhost:8888/video/video/test13.ts
+#EXT-X-ENDLIST`;
+
+    var manifest2_str = 
+    `#EXTM3U#EXT-X-VERSION:3#EXT-X-TARGETDURATION:16#EXT-X-MEDIA-SEQUENCE:0#EXT-X-PLAYLIST-TYPE:VOD#EXT-X-KEY:METHOD=AES-128,URI="./enc.key"#EXTINF:14.625000,test0.ts#EXTINF:15.166667,test1.ts#EXTINF:6.708333,test2.ts#EXTINF:13.125000,test3.ts#EXTINF:11.250000,test4.ts#EXTINF:14.625000,test5.ts#EXTINF:14.458333,test6.ts#EXTINF:7.958333,test7.ts#EXTINF:10.208333,test8.ts#EXTINF:12.875000,test9.ts#EXTINF:12.166667,test10.ts#EXTINF:12.083333,test11.ts#EXTINF:11.375000,test12.ts#EXTINF:6.625000,test13.ts#EXT-X-ENDLIST#EXTM3U#EXT-X-VERSION:3#EXT-X-TARGETDURATION:16#EXT-X-MEDIA-SEQUENCE:0#EXT-X-PLAYLIST-TYPE:VOD#EXT-X-KEY:METHOD=AES-128,URI="./enc.key"#EXTINF:14.625000,../video/test0.ts#EXTINF:15.166667,../video/test1.ts#EXTINF:6.708333,../video/test2.ts#EXTINF:13.125000,../video/test3.ts#EXTINF:11.250000,../video/test4.ts#EXTINF:14.625000,../video/test5.ts#EXTINF:14.458333,../video/test6.ts#EXTINF:7.958333,../video/test7.ts#EXTINF:10.208333,../video/test8.ts#EXTINF:12.875000,../video/test9.ts#EXTINF:12.166667,../video/test10.ts#EXTINF:12.083333,../video/test11.ts#EXTINF:11.375000,../video/test12.ts#EXTINF:6.625000,../video/test13.ts#EXT-X-ENDLIST`;
+    var manifest_encrypted = 
+    "1zQXMj65m9UG8LrsvdHWOGWZ8xO0zKqTG9OBz4+RvFnmDsxQRHuu0dAN/kXPnPLy5EL9yNvL1VzWnmbvoAYZtAUTW7sfQsYyjSBUERoyd8t+NNSafkAYBSv0zuQNw9PIXedMz5cEoQiLt11m9ZETGXASziSo5206Eus0FeK1qNH27UbHXiwY5S6RXNCLIhG+JXL1E54KeAg7FxK7af4iELzbk/H7UCSyj51LRg9cbyDiWuUQ/5YePEB3n0ClD9LbqgvXOUZwI6OalZdRSkMjLQq0uJLkomfB1D6f4LZ0wm12Qum7wdhrGuhCEcpP8N3NA4OEHRh3+luTb8H0oGLLbn0OkQR97+PB1KHWPgj0CyBnGTCmHuU1kAAAA5hd9371h+fhqI4s+Htm8NZ/crM3b3ZNumhmHEdEpuXxVBohE0qSVx57YeSBY34KsTBFPtT+r4GYQWNvjlhPXR/zRjEPOmduU6gWibfm+AA4P7HDHxfY2fv5fJF9U07MNZxA6Ftb9HZKwry1pPrnT99eYYEUGjogIZAyY30a1SxEa+31Let9M6v3pTLe59O/niOKqP76QEj0Py+7QC63D/h531ZnW2FkyNGtdeu+bNFZZWnxaCDk327KbRQFfrdbPzmV+XOiikFJnFMCkiaBdwxwePkMjwZ1MZ50KThdncyQoMZyWvmxNXBocVdTp+1y4kfZ9THJPS3Qu8rx0X57t9i8mHNDbYyD6g3f/W06uGztquaPdVOjFM7wkAeB7gSJBgsG0M7C6UZCJhsFqOwogJIY4j4P+KypdBU3eYihdjQMx7txxUAdO7T2n0+MyK/4mMOPLzNQb0OPF3P1kJhrVGVDkCb7XgmMgBU6hhiwD+yUvtjR8HpXFWzmmNJlYIhePtEi5+6HdD7s4W45iOfLs5h4WtElQ4dHarp4EB7vBsvnYX+UquCegoRxv8kQfdu2OPYvjJ5qCUjZxETDd9nx1VtoMv3fnQ==";
+    
+}

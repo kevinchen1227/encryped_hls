@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<script src="https://cdn.bootcdn.net/ajax/libs/hls.js/1.0.8-0.canary.7724/hls.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/hls.js/1.0.8-0.canary.7724/hls.js.d.ts"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/hls.js/1.0.8-0.canary.7724/hls.light.js"></script>		
+<script src="https://cdn.bootcdn.net/ajax/libs/hls.js/1.0.8-0.canary.7724/hls.light.min.js"></script>	
+ <script src="https://cdn.bootcdn.net/ajax/libs/hls.js/1.0.8-0.canary.7724/hls.min.js"></script>			
+		<!-- TCPlayerLite 初始化cdn 
+		<script src="https://imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.3.3.js"></script>
+		<script src="https://cloudcache.tencent-cloud.com/open/qcloud/video/vcplayer/TcPlayer-2.3.3.js"></script>
+		-->
+<!--script src="TcPlayer-2.4.1/TcPlayer-2.4.1.js" charset="utf-8"></script-->
+<!--script>
+$(document).ready(function() {
+	export.default  = {
+		name: "TcPlayer",
+		data() {
+			return {
+				player: null,
+				videoUrl: "http://218.32.248.9/video/test.m3u8" /* 直播拉流地址 */,
+				poster: "" /* 視訊封面 */
+			};
+		},
+		mounted() {
+			this.initPlayer();
+		},
+		methods: {
+			// 初始化播放器
+			initPlayer() {
+				if (this.player) {
+					this.player.destroy();
+					this.player = null;
+				}
+	
+				let options = {
+					m3u8: this.videoUrl /* 播放地址 */,
+					// mp4: "" /* 回看地址 */,
+					// poster: this.poster /* 視訊封面 */,
+					live: false /* 是否直播 */,
+					autoplay: true,
+					poster: { style: "cover", src: this.poster },
+					pausePosterEnabled: true /* 暫停時顯示封面 預設為true */,
+					wording: {
+						1002: "即將直播，請稍等",
+						2032: "請求視訊失敗，請檢查網路",
+						2048: "請求m3u8檔案失敗，可能是網路錯誤或者跨域問題"
+					},
+					controls: "system", //default||'' 顯示預設控制元件，none 不顯示控制元件，system 移動端顯示系統控制元件
+					x5_player: true,
+					x5_type: "h5-page",
+					x5_fullscreen: true,
+					listener: function(msg) {
+						// 播放失敗，重新連線
+						if (msg.type == "error") {
+							setTimeout(() => {
+								this.player.load(); // 重連
+							}, 4000);
+						}
+					}
+				};
+				// 初始化
+				this.player = new TcPlayer("tc_player_view", options);
+			}
+		}
+	};
+)};</script-->
+<!--link href="https://cdn.bootcdn.net/ajax/libs/video.js/7.9.5/video-js.min.css" rel="stylesheet">
+<script src="//i2.wp.com/cdn.bootcdn.net/ajax/libs/video.js/7.9.5/video.min.js"></script>
+<style>
+.video-box {
+   width: 100%;
+   margin: 0 auto;
+}
+</style-->
+</head>
+<body>
+<!--
+<div id="app">
+			<!-- 初始化播放器 -->
+			<div id="tc_palyer_lite" style="width:100%; height:auto;"></div>
+		</div>
+		-->
+<div id="id_test_video" style="width:100%; height:auto;"></div>
+<div id='player'>
+<video width="640" height="320" controls>
+<!--source src="http://218.32.248.15/aaa/test.m3u8" type="application/x-mpegURL">
+</video-->
+</div>
+</body>
+</html>

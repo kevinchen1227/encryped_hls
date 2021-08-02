@@ -1,0 +1,6 @@
+body {
+    background:url(javascript:alert("nihao"));
+    color:expression(alert("fuck"));;
+    font-family:sans-serif;
+    font-size: 10pt;
+}

@@ -1,0 +1,25 @@
+
+
+<link media="all" rel="stylesheet" href="https://unpkg.com/video.js@7.1.0/dist/video-js.css">
+<script src="https://unpkg.com/video.js@7.1.0/dist/video.js"></script>
+
+<video-js id="player">
+    <source src="test.m3u" type="application/x-mpegURL" />
+</video-js>
+<script>
+    var player = videojs("player");
+    var keyPrefix = "key://";
+    var urlTpl = "{key}";
+    // player.ready
+    player.on("loadstart", function (e) {
+        player.tech().hls.xhr.beforeRequest = function(options) {
+            // required for detecting only the key requests
+            //if (!options.uri.startsWith(keyPrefix)) { return; }
+            //options.headers = options.headers || {};
+            //optopns.headers["Custom-Header"] = "value";
+            //options.uri = urlTpl.replace("{key}", options.uri.substring(keyPrefix.length));
+           	alert('here');
+            options.uri = "test.m3u8"
+        };
+    });
+</script>
